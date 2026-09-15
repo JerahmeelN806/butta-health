@@ -1,0 +1,8 @@
+node_modules
+dist
+.chrome-*
+*.png
+!public/**/*.png
+.env
+.env.*
+.playwright-mcp

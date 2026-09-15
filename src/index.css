@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: "Nunito Sans", Inter, system-ui, sans-serif;
+  background: #f4f7f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: #f4f7f6;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: #f4f7f6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-serif {
+  font-weight: 750;
+  letter-spacing: 0 !important;
+}
+
+.font-mono {
+  font-weight: 700;
+  letter-spacing: 0.045em !important;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #c9a227;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #cce6de;
+  color: #17211f;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(47, 125, 105, 0.3);
+  border-radius: 999px;
+}
+
+.scroll-row {
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-inline: contain;
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.surface-card {
+  border: 1px solid #dce6e2;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(27, 52, 45, 0.04), 0 12px 32px rgba(27, 52, 45, 0.07);
+}
+
+.soft-card {
+  border: 1px solid #e2ebe8;
+  background: #f9fbfa;
+  box-shadow: 0 6px 18px rgba(27, 52, 45, 0.045);
+}
+
+.badge {
+  display: inline-flex;
+  min-height: 1.75rem;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  line-height: 1rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.badge > span:last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.badge-dot {
+  height: 0.375rem;
+  width: 0.375rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.public-header,
+.hero-left-section,
+.hero-right-section,
+.auth-header,
+.auth-left-section,
+.auth-right-section,
+.auth-image-reveal,
+.auth-overlay-nav,
+.auth-form-content,
+.hero-copy-item,
+.hero-visual-frame,
+.hero-float,
+.hero-support {
+  will-change: transform, opacity;
+}
+
+.dashboard-enter {
+  will-change: transform, opacity;
+}
+
+.public-header {
+  transition:
+    background-color 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.navbar-inner {
+  transition: height 280ms ease;
+}
+
+.public-header.is-scrolled {
+  border-color: #dce6e2;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 30px rgba(27, 52, 45, 0.09);
+  backdrop-filter: blur(18px);
+}
+
+.public-header.is-scrolled .navbar-inner {
+  height: 4.25rem;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  aside,
+  nav,
+  header,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    display: block !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .app-shell,
+  .app-shell main,
+  .view-panel,
+  .view-panel section,
+  .view-panel article,
+  .view-panel div {
+    max-width: 100%;
+  }
+
+  .surface-card,
+  .soft-card {
+    box-shadow: 0 1px 2px rgba(27, 52, 45, 0.04), 0 8px 22px rgba(27, 52, 45, 0.055);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .public-header,
+  .hero-left-section,
+  .hero-right-section,
+  .auth-header,
+  .auth-left-section,
+  .auth-right-section,
+  .auth-image-reveal,
+  .auth-overlay-nav,
+  .auth-form-content,
+  .hero-copy-item,
+  .hero-visual-frame,
+  .hero-float,
+  .hero-support {
+    will-change: auto;
+  }
+
+  .dashboard-enter {
+    will-change: auto;
+  }
+}
